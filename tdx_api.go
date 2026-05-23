@@ -5,7 +5,7 @@ import (
 	"sort"
 	"time"
 
-	"a_stock/util"
+	"github.com/xiaolo66/a_stock/util"
 
 	"github.com/bensema/gotdx/proto"
 	"github.com/bensema/gotdx/types"
