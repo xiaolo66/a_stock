@@ -26,7 +26,7 @@ func ParseMarket(market string) (types.Market, error) {
 // MarketsForQuery 空字符串返回沪深北三个市场，否则解析单个市场。
 func MarketsForQuery(market string) ([]types.Market, error) {
 	if strings.TrimSpace(market) == "" {
-		return []types.Market{types.MarketSZ, types.MarketSH, types.MarketBJ}, nil
+		return []types.Market{types.MarketSZ, types.MarketSH}, nil
 	}
 	m, err := ParseMarket(market)
 	if err != nil {

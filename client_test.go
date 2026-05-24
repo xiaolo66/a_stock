@@ -20,7 +20,7 @@ func TestGetAllAStockCodes(t *testing.T) {
 		t.Fatal("New() returned nil")
 	}
 
-	items, err := c.GetAllAStockCodes("sh")
+	items, err := c.GetAllAStockCodes("")
 	if err != nil {
 		t.Fatalf("GetAllAStockCodes() returned error: %v", err)
 	}
@@ -120,12 +120,14 @@ func TestGetStockKLine(t *testing.T) {
 		t.Fatal("New() returned nil")
 	}
 
-	items, err := c.GetStockKLineSince("300767.SZ", "1h", "2026-05-21")
+	items, err := c.GetStockKLineSince("300767.SZ", "1d", "2021-01-01")
 	if err != nil {
 		t.Fatalf("GetStockKLineSince() returned error: %v", err)
 	}
+	// for i, item := range items {
+	// 	t.Logf("[%d] %+v", i, item)
+	// }
 	t.Logf("共 %d 条", len(items))
-	for i, item := range items {
-		t.Logf("[%d] %+v", i, item)
-	}
+	t.Logf("首条: %+v", items[0])
+	t.Logf("末条: %+v", items[len(items)-1])
 }
